@@ -1,0 +1,80 @@
+*{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      background:#0338a3;
+      font-family:Arial;
+      padding:40px 20px;
+    }
+
+    .container{
+      max-width:1200px;
+      margin:auto;
+    }
+
+    .top-cards,
+    .bottom-cards{
+      display:grid;
+      gap:20px;
+    }
+
+    .card{
+      background:white;
+      padding:60px;
+      border-radius:16px;
+      text-align:center;
+      font-size:30px;
+      font-weight:bold;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    /* Mobile */
+
+    .top-cards,
+    .bottom-cards{
+      grid-template-columns:1fr;
+    }
+
+    /* Medium */
+
+    @media (min-width:768px){
+
+      .top-cards{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .bottom-cards{
+        grid-template-columns:repeat(2,1fr);
+        width:50%;
+        margin:20px auto 0;
+      }
+
+      .bottom-cards .card:last-child{
+        grid-column:1 / span 2;
+        width:50%;
+        justify-self:center;
+      }
+    }
+
+    /* Large */
+
+    @media (min-width:1024px){
+
+      .top-cards{
+        grid-template-columns:repeat(3,1fr);
+      }
+
+      .bottom-cards{
+        grid-template-columns:repeat(2,1fr);
+        width:66%;
+        margin:20px auto 0;
+      }
+
+      .bottom-cards .card:last-child{
+        grid-column:auto;
+        width:100%;
+      }
+    }
